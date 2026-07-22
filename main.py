@@ -14,4 +14,4 @@ def home(req:Request):
     # -> index.html을 읽어서 req 데이터를 전달하여 동적 html 구성 
     # -> 응답 (return) -> 클라이언트 브라우저에게 전달 -> 렌더링, DOM tree 
     # -> 브라우저 해석 화면에 그리기 -> 클라이언트는 응답 결과를 화면에서 볼 수 있다. 
-    return templates.TemplateResponse("index.html", {"req":req})
+    return templates.TemplateResponse(req, "index.html")
