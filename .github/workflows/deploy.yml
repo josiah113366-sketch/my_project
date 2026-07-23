@@ -37,9 +37,9 @@ jobs:
       - name: sourcecode copy to EC2
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ${{ secrets.HOST }} # ip 번호 
+          username: ${{ secrets.USERNAME }} # 유저 이름 ubuntu
+          key: ${{ secrets.EC2_KEY }} # pem 파일 
           port: 22
           # 복사할 대상 (편의상 .(현재 디렉토리))
           source: .

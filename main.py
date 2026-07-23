@@ -17,3 +17,7 @@ def home(req:Request):
     # -> 응답 (return) -> 클라이언트 브라우저에게 전달 -> 렌더링, DOM tree 
     # -> 브라우저 해석 화면에 그리기 -> 클라이언트는 응답 결과를 화면에서 볼 수 있다. 
     return templates.TemplateResponse(req, "index.html")
+
+@app.get("/auth/login")
+def home(req:Request): 
+    return templates.TemplateResponse(req, "login.html")
