@@ -32,5 +32,14 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/fastapi-app:1.0
 
+      # 사용자명/nginx-proxy:1.0 형태로 이미지 빌드 -> 푸시 
+      - name: Build and Push nginx proxy
+        uses: docker/build-push-action@v4
+        with: 
+          context: ./nginx
+          file: ./nginx/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/nginx-proxy:1.0
+
   # EC2에 docker-compose.yml, 설정 파일 등 copy, 도커 컴포즈 작동 
   # cd:
